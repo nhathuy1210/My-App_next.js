@@ -8,6 +8,11 @@ const nextConfig = {
         port: '1337',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: '**', // Cho phép tất cả https domains tạm thời
+        pathname: '/uploads/**',
+      },
     ],
   },
 };
