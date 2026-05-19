@@ -26,7 +26,7 @@ export default function AboutPage() {
           <ul>
             <li>Strapi (Headless CMS)</li>
             <li>Node.js</li>
-            <li>PostgreSQL</li>
+            <li>SQlite</li>
           </ul>
           
           <h2>Mục đích</h2>

@@ -82,12 +82,12 @@ export default function Navbar() {
                   Chỉnh sửa hồ sơ
                 </Link>
                 <Link href="/settings" className="dropdown-item" onClick={() => setOpen(false)}>
-                  ⚙️ Cài đặt
+                  Cài đặt
                 </Link>
                 {role === 'staff' && (
-                  <Link href="/dashboard" className="dropdown-item" onClick={() => setOpen(false)}>
-                    Dashboard Quản Lý
-                  </Link>
+                <Link href="/dashboard" className="dropdown-item" onClick={() => setOpen(false)}>
+                  Dashboard Quản Lý
+                </Link>
                 )}
                 <button className="dropdown-item logout-btn" onClick={handleLogout}>
                   Đăng xuất

@@ -57,7 +57,7 @@ export default function SettingsPage() {
         <div style={{ marginTop: '30px' }}>
           {/* Thông báo */}
           <section style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
-            <h2>🔔 Thông báo</h2>
+            <h2>Thông báo</h2>
             
             <div style={{ marginTop: '15px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px', cursor: 'pointer' }}>
@@ -84,7 +84,7 @@ export default function SettingsPage() {
 
           {/* Bảo mật */}
           <section style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
-            <h2>🔒 Bảo Mật</h2>
+            <h2>Bảo Mật</h2>
             
             <div style={{ marginTop: '15px' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px', cursor: 'pointer' }}>
@@ -105,7 +105,7 @@ export default function SettingsPage() {
 
           {/* Quyền riêng tư */}
           <section style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
-            <h2>👁️ Quyền Riêng Tư</h2>
+            <h2>Quyền Riêng Tư</h2>
             
             <div style={{ marginTop: '15px' }}>
               <label style={{ display: 'block', marginBottom: '8px', fontSize: '15px', fontWeight: '600' }}>
@@ -124,16 +124,16 @@ export default function SettingsPage() {
                   cursor: 'pointer',
                 }}
               >
-                <option value="public">🌍 Công khai</option>
-                <option value="friends">👥 Chỉ bạn bè</option>
-                <option value="private">🔒 Riêng tư</option>
+                <option value="public">Công khai</option>
+                <option value="friends">Chỉ bạn bè</option>
+                <option value="private">Riêng tư</option>
               </select>
             </div>
           </section>
 
           {/* Ngôn ngữ */}
           <section style={{ marginBottom: '30px', paddingBottom: '20px', borderBottom: '1px solid #e2e8f0' }}>
-            <h2>🌐 Ngôn Ngữ & Địa Phương</h2>
+            <h2>Ngôn Ngữ & Địa Phương</h2>
             
             <div style={{ marginTop: '15px' }}>
               <label style={{ display: 'block', marginBottom: '8px', fontSize: '15px', fontWeight: '600' }}>
@@ -159,38 +159,6 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* Nguy hiểm */}
-          <section style={{ marginBottom: '30px' }}>
-            <h2 style={{ color: '#dc2626' }}>⚠️ Khu Vực Nguy Hiểm</h2>
-            
-            <div style={{ marginTop: '15px', padding: '15px', backgroundColor: '#fee2e2', borderRadius: '8px', border: '1px solid #fecaca' }}>
-              <p style={{ fontSize: '14px', color: '#991b1b', marginBottom: '12px' }}>
-                Các hành động này không thể hoàn tác. Hãy cẩn thận!
-              </p>
-              
-              <button
-                style={{
-                  padding: '10px 16px',
-                  backgroundColor: '#dc2626',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  fontWeight: '600',
-                  marginRight: '10px',
-                }}
-                onClick={() => {
-                  if (confirm('Bạn có chắc muốn xóa tài khoản của mình?')) {
-                    toast.error('Xóa tài khoản sẽ được triển khai sau');
-                  }
-                }}
-              >
-                ❌ Xóa Tài Khoản
-              </button>
-            </div>
-          </section>
-
           {/* Nút lưu */}
           <div style={{ marginTop: '30px', display: 'flex', gap: '10px' }}>
             <button
@@ -206,7 +174,7 @@ export default function SettingsPage() {
                 fontWeight: '600',
               }}
             >
-              💾 Lưu Cài Đặt
+              Lưu Cài Đặt
             </button>
             
             <Link href="/profile">
