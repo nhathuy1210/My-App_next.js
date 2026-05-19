@@ -8,7 +8,7 @@ body {
 .page {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 .card {
@@ -50,7 +50,7 @@ form {
 .card p {
   font-size: 15px;
   color: #475569;
-  margin: 12px 0;
+  margin: 0px 0;
 }
 
 .card ul,
@@ -68,7 +68,7 @@ label {
   font-weight: 600;
   color: #1e293b;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 input,
@@ -446,7 +446,7 @@ button:disabled {
 
 /* ===== QUẢN LÝ USER ===== */
 .manage-users-page {
-  max-width: 1200px !important;
+  max-width: 1300px !important;
 }
 
 .user-count {
@@ -473,8 +473,7 @@ button:disabled {
 
 .user-table th,
 .user-table td {
-  padding: 1rem 0.8rem;
-  /* padding lớn hơn */
+  padding: 1.5rem 0.5rem;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
 }

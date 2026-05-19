@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   const staffOnlyRoutes = ['/dashboard', '/manage-users'];
   
   // Routes cần auth (employee + staff)
-  const protectedRoutes = ['/profile'];
+  const protectedRoutes = ['/profile', '/settings'];
   
   // Kiểm tra route staff-only
   if (staffOnlyRoutes.some(route => pathname.startsWith(route))) {
@@ -47,5 +47,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/profile/:path*', '/manage-users/:path*'],
+  matcher: ['/dashboard/:path*', '/profile/:path*', '/manage-users/:path*', '/settings/:path*'],
 };

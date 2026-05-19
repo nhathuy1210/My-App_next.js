@@ -26,13 +26,13 @@ export default function RootLayout({ children }) {
             containerClassName=""
             containerStyle={{}}
             toastOptions={{
-              duration: 2500,
+              duration: 2000,
               style: {
                 background: '#363636',
                 color: '#fff',
               },
               success: {
-                duration: 2500,
+                duration: 2000,
                 iconTheme: {
                   primary: '#10b981',
                   secondary: '#fff',

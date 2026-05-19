@@ -43,7 +43,6 @@ export default function Navbar() {
           <span className="logo-text">MyApp</span>
         </Link>
 
-        {/* Menu giữa */}
         <div className="navbar-menu">
           <Link href="/" className="nav-link">
             Trang chủ
@@ -56,7 +55,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* User section bên phải */}
         {user ? (
           <div className="navbar-user" ref={dropdownRef}>
             <button className="user-button" onClick={() => setOpen(!open)}>
@@ -82,6 +80,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/profile/edit" className="dropdown-item" onClick={() => setOpen(false)}>
                   Chỉnh sửa hồ sơ
+                </Link>
+                <Link href="/settings" className="dropdown-item" onClick={() => setOpen(false)}>
+                  ⚙️ Cài đặt
                 </Link>
                 {role === 'staff' && (
                   <Link href="/dashboard" className="dropdown-item" onClick={() => setOpen(false)}>
