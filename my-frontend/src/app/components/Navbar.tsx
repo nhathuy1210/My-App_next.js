@@ -38,11 +38,25 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link href="/dashboard" className="navbar-logo">
+        <Link href="/" className="navbar-logo">
           <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
           <span className="logo-text">MyApp</span>
         </Link>
 
+        {/* Menu giữa */}
+        <div className="navbar-menu">
+          <Link href="/" className="nav-link">
+            Trang chủ
+          </Link>
+          <Link href="/about" className="nav-link">
+            About
+          </Link>
+          <Link href="/contact" className="nav-link">
+            Contact
+          </Link>
+        </div>
+
+        {/* User section bên phải */}
         {user ? (
           <div className="navbar-user" ref={dropdownRef}>
             <button className="user-button" onClick={() => setOpen(!open)}>
@@ -63,6 +77,9 @@ export default function Navbar() {
 
             {open && (
               <div className="dropdown-menu">
+                <Link href="/dashboard" className="dropdown-item" onClick={() => setOpen(false)}>
+                  Dashboard
+                </Link>
                 <Link href="/profile" className="dropdown-item" onClick={() => setOpen(false)}>
                   Profile
                 </Link>

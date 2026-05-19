@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
   // Routes không cần auth
-  const publicRoutes = ['/login', '/signup', '/forgot-password', '/reset-password'];
+  const publicRoutes = ['/login', '/signup', '/forgot-password', '/reset-password', '/home', '/about', '/contact', '/'];
   
   // Routes cần auth
   const protectedRoutes = ['/dashboard', '/profile', '/manage-users'];
