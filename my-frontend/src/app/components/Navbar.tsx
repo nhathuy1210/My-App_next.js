@@ -53,6 +53,16 @@ export default function Navbar() {
           <Link href="/contact" className="nav-link">
             Contact
           </Link>
+          {user && role === 'staff' && (
+            <Link href="/projects" className="nav-link">
+              📁 Dự án
+            </Link>
+          )}
+          {user && (
+            <Link href="/my-tasks" className="nav-link">
+              📋 My Tasks
+            </Link>
+          )}
         </div>
 
         {user ? (

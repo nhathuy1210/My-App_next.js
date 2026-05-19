@@ -107,7 +107,7 @@ export default function DashboardPage() {
     });
   };
 
-  // Filter & Search logic
+  // Filter & Search
   const filteredUsers = users.filter((u) => {
     // Search by username or email
     const matchSearch =

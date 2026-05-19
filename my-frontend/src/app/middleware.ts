@@ -9,10 +9,10 @@ export function middleware(request: NextRequest) {
   const publicRoutes = ['/login', '/signup', '/forgot-password', '/reset-password', '/home', '/about', '/contact', '/'];
   
   // Routes chỉ staff mới vào
-  const staffOnlyRoutes = ['/dashboard', '/manage-users'];
+  const staffOnlyRoutes = ['/dashboard', '/manage-users', '/projects'];
   
   // Routes cần auth (employee + staff)
-  const protectedRoutes = ['/profile', '/settings'];
+  const protectedRoutes = ['/profile', '/settings', '/my-tasks'];
   
   // Kiểm tra route staff-only
   if (staffOnlyRoutes.some(route => pathname.startsWith(route))) {
@@ -47,5 +47,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/profile/:path*', '/manage-users/:path*', '/settings/:path*'],
+  matcher: ['/dashboard/:path*', '/profile/:path*', '/manage-users/:path*', '/settings/:path*', '/projects/:path*', '/my-tasks/:path*'],
 };
