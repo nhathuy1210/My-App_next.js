@@ -77,9 +77,6 @@ export default function Navbar() {
 
             {open && (
               <div className="dropdown-menu">
-                <Link href="/dashboard" className="dropdown-item" onClick={() => setOpen(false)}>
-                  Dashboard
-                </Link>
                 <Link href="/profile" className="dropdown-item" onClick={() => setOpen(false)}>
                   Profile
                 </Link>
