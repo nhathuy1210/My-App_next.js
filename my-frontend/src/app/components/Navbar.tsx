@@ -38,13 +38,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo bên trái */}
         <Link href="/dashboard" className="navbar-logo">
           <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
           <span className="logo-text">MyApp</span>
         </Link>
 
-        {/* Khu vực user bên phải */}
         {user ? (
           <div className="navbar-user" ref={dropdownRef}>
             <button className="user-button" onClick={() => setOpen(!open)}>

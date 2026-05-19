@@ -4,12 +4,28 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  
+  // Routes không cần auth
+  const publicRoutes = ['/login', '/signup', '/forgot-password', '/reset-password'];
+  
+  // Routes cần auth
+  const protectedRoutes = ['/dashboard', '/profile', '/manage-users'];
+  
+  // Kiểm tra nếu route cần auth
+  if (protectedRoutes.some(route => pathname.startsWith(route))) {
+    const jwt = request.cookies.get('jwt')?.value;
+    
+    // Nếu không có JWT -> redirect đến login
+    if (!jwt) {
+      const url = request.nextUrl.clone();
+      url.pathname = '/login';
+      return NextResponse.redirect(url);
+    }
+  }
 
-  // Chỉ bảo vệ route /manage-users
+  // Kiểm tra permission cho /manage-users (chỉ staff)
   if (pathname.startsWith('/manage-users')) {
     const role = request.cookies.get('role')?.value;
-
-    // Nếu không phải staff -> chuyển về dashboard
     if (role !== 'staff') {
       const url = request.nextUrl.clone();
       url.pathname = '/dashboard';
@@ -21,5 +37,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/manage-users/:path*'],
+  matcher: ['/dashboard/:path*', '/profile/:path*', '/manage-users/:path*'],
 };

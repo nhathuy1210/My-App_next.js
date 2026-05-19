@@ -33,16 +33,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const jwt = localStorage.getItem('jwt');
     const userStr = localStorage.getItem('user');
     const roleStr = localStorage.getItem('role');
+    
     if (jwt && userStr) {
       try {
-        const userData = JSON.parse(userStr);
-        setUser(userData);
-        setRole(roleStr || userData?.role?.name || 'employee');
+        // Verify JWT token bằng cách gọi API /api/users/me
+        const verifyToken = async () => {
+          try {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/users/me`, {
+              headers: { Authorization: `Bearer ${jwt}` },
+            });
+            
+            if (res.ok) {
+              // JWT hợp lệ -> khôi phục user
+              const userData = JSON.parse(userStr);
+              setUser(userData);
+              setRole(roleStr || userData?.role?.name || 'employee');
+            } else {
+              // JWT không hợp lệ -> clear localStorage
+              logout();
+            }
+          } catch (error) {
+            console.error('Token verification error:', error);
+            logout();
+          } finally {
+            setLoading(false);
+          }
+        };
+        
+        verifyToken();
       } catch (e) {
         console.error('Parse user error', e);
+        setLoading(false);
       }
+    } else {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
   const setAuth = (jwt: string, userData: User) => {
