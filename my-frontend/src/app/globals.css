@@ -1,83 +1,140 @@
 body {
   margin: 0;
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 45%, #eef2ff 100%);
+  background: #f8fafb;
   color: #0f172a;
   font-family: Inter, 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
 .page {
-  max-width: 560px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 28px 20px;
+  padding: 40px 20px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid #d1fae5;
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(3px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  line-height: 1.6;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+  color: #1e293b;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.card h1 {
+  font-size: 32px;
+  margin-top: 0;
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #0d9488;
 }
 
 .card h3 {
-  margin: 0 0 14px;
-  font-size: 30px;
-  color: #0f766e;
+  font-size: 20px;
 }
 
 form {
   display: grid;
-  gap: 9px;
+  gap: 16px;
+}
+
+.card p {
+  font-size: 15px;
+  color: #475569;
+  margin: 12px 0;
+}
+
+.card ul,
+.card ol {
+  font-size: 15px;
+  color: #475569;
+}
+
+.card li {
+  margin-bottom: 8px;
 }
 
 label {
-  font-size: 13px;
-  font-weight: 650;
-  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  display: block;
+  margin-bottom: 8px;
 }
 
-input {
+input,
+textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #a7f3d0;
-  border-radius: 10px;
-  height: 42px;
-  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
   outline: none;
   background: #ffffff;
+  font-size: 15px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-input:focus {
+input {
+  height: 44px;
+}
+
+textarea {
+  font-family: inherit;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
   border-color: #0d9488;
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
 }
 
 button {
-  margin-top: 6px;
-  height: 42px;
+  margin-top: 12px;
+  height: 44px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   background: linear-gradient(90deg, #0d9488 0%, #14b8a6 100%);
   color: #fff;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 button:disabled {
-  background: #99d9d2;
+  background: #cbd5e1;
   cursor: not-allowed;
   box-shadow: none;
+  transform: none;
 }
 
 .error {
   min-height: 16px;
-  margin: -2px 0 2px;
-  color: #b91c1c;
+  margin: 4px 0 0;
+  color: #dc2626;
   font-size: 13px;
+  font-weight: 500;
 }
 
 .radio-group {
@@ -136,13 +193,94 @@ button:disabled {
   margin: 0 auto;
 }
 
+/* Responsive */
 @media (max-width: 900px) {
   .page {
-    padding: 16px;
+    padding: 32px 20px;
+    max-width: 900px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .navbar-menu {
+    gap: 1rem;
   }
 }
 
-/* ===== NAVBAR ===== */
+@media (max-width: 640px) {
+  .page {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .card h1 {
+    font-size: 26px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .navbar-container {
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .navbar-logo {
+    flex: 0 0 auto;
+  }
+
+  .navbar-menu {
+    order: 3;
+    flex: 1 1 100%;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .user-name {
+    max-width: 100px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .user-button {
+    padding: 0.3rem 0.8rem;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    height: 48px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
+  }
+
+  form {
+    gap: 12px;
+  }
+}
 .navbar {
   background: white;
   border-bottom: 1px solid #e2e8f0;
@@ -287,7 +425,7 @@ button:disabled {
 
 .nav-link {
   text-decoration: none;
-  color: #334155;
+  color: #475569;
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.2s ease;
@@ -306,21 +444,6 @@ button:disabled {
   height: auto;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .navbar-container {
-    padding: 0.5rem 1rem;
-  }
-
-  .user-name {
-    max-width: 100px;
-  }
-
-  .logo-text {
-    display: none;
-  }
-}
-
 /* ===== QUẢN LÝ USER ===== */
 .manage-users-page {
   max-width: 1200px !important;
@@ -329,8 +452,8 @@ button:disabled {
 .user-count {
   margin: 0.5rem 0 1.2rem 0;
   font-size: 1rem;
-  color: #334155;
-  border-bottom: 1px solid #d1fae5;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
   padding-bottom: 0.5rem;
 }
 
